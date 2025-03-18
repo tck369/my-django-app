@@ -1,0 +1,35 @@
+{% extends "admin_base.html" %}
+{% load static %}
+{% block content %}
+    <link href="{% static 'css/booking.css' %}" rel="stylesheet">
+    <div class="container-fluid mt-4">
+    <div class="table-container mt-5">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Email</th>
+                    <th>Password</th>                                                           
+                    <th>Money</th>
+                    <th>Nickname</th>
+                    <th>Phone</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}  
+                <tr>
+                    <td class="fw-bold">{{ user.id }}</td>
+                    <td>{{ user.Email }}</td>
+                    <td>{{ user.Password|truncatechars:12 }}</td>  
+                    <td>${{user.Money|floatformat:2 }}</td>
+                    <td>{{ user.NickName }}</td>
+                    <td>{{ user.Phone }}</td>
+                
+                </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+         {% endblock %}

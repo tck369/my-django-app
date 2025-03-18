@@ -1,0 +1,42 @@
+/* 让表格铺满页面 */
+.table-container {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+/* 订单表格样式 */
+.table {
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 表头样式，和 base.html 的悬浮栏颜色一致 */
+.table thead {
+    background-color: #0d6efd; /* 和导航栏一致的蓝色 */
+    color: white;
+}
+
+/* 让分页按钮右下角对齐 */
+.pagination {
+    justify-content: flex-end;
+}
+
+/* 确保 orders 文字正确定位 */
+h2.position-absolute {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0d6efd;
+}
+
+/* 按钮样式 */
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}

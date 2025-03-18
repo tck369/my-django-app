@@ -1,0 +1,49 @@
+/* 让表格铺满页面 */
+.table-container {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+/* 预订表格样式 */
+.table {
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 表头样式，与 base.html 的悬浮栏颜色一致 */
+.table thead {
+    background-color: #0d6efd; /* 统一为蓝色 */
+    color: white;
+}
+
+/* 预订按钮样式 */
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* 模态框样式 */
+.modal-content {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    background-color: #0d6efd;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* 确保分页按钮右下角对齐 */
+.pagination {
+    justify-content: flex-end;
+}

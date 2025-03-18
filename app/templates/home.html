@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+     <div class="container mt-4">
+        <!-- Welcome Message -->
+        <div class="text-center mb-4">
+            <h1>Welcome to Sport Order System</h1>
+            <p class="lead">Manage your sports venue bookings with ease.</p>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">View Orders</h5>
+                        <p class="card-text">Check Order records.</p>
+                        <a href="{% url 'Orders' %}" class="btn btn-primary">View</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Book a Venue</h5>
+                        <p class="card-text">Reserve a sports venue easily.</p>
+                        <a href="{% url 'Booking' %}" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Profile</h5>
+                        <p class="card-text">Manage your personal details.</p>
+                        <a href="{% url 'profile_edit' %}" class="btn btn-primary">Edit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

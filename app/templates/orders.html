@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+        
+                {% block content %}
+                    <link rel="stylesheet" href="../static/css/order.css">
+    <div class="container-fluid mt-4">
+        
+        <div class="table-container mt-5">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>Area</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in orders %}
+                    <tr>
+                        <td class="fw-bold">{{ order.Order_number }}</td>
+                        <td>{{ order.Start_Time }}</td>
+                        <td>{{ order.End_Time }}</td>
+                        <td>{{ order.Order_Area }}</td>
+                        <td>
+                            <button class="btn btn-sm btn-secondary" onclick="window.location.href='{% url 'feedback' %}'">Feedback</button>
+
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+             
+    </div>
+                {% endblock %}
+          

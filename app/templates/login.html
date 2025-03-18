@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sport Order System - Login</title>
+    <link href="{% static 'bootstrap-5.0.0-beta1-dist/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/signin.css' %}" rel="stylesheet">
+</head>
+<body class="d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow-lg" style="width: 350px;">
+
+        <h3 class="text-center mb-4">Login</h3>
+        <form method="POST" action={% url 'login' %}>
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Nickname</label>
+                <select class="form-select" id="nickname" name="nickname" required>
+                    <option value="user">User</option>
+                    <option value="administer">Administer</option>
+                </select>
+            </div>
+
+
+            <button  type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
+        <div class="text-center mt-3">
+            <small>Don't have an account? <a href="{% url 'register' %}">register</a></small>
+        </div>
+    </div>
+    <script src="{% static '/bootstrap-5.0.0-beta1-dist/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

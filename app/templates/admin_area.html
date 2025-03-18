@@ -1,0 +1,31 @@
+{% extends "admin_base.html" %}
+{% load static %}
+{% block content %}
+    <link href="{% static 'css/booking.css' %}" rel="stylesheet">
+    <div class="container-fluid mt-4">
+        <div class="table-container mt-5">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Payment</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>Order</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for area in areas %}  
+                    <tr>
+                        <td class="fw-bold">{{ area.Name }}</td>
+                        <td>{{ area.Payment }}</td>
+                        <td>{{ area.Start_Time }}</td>
+                        <td>{{ area.End_Time }}</td>
+                        <td>{% if area.Order %} Yes {% else %} No {% endif %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

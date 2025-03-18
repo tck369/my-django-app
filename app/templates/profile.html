@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+       
+           {% block content %}
+           <div class="container mt-4">
+        <h2 class="text-center">Profile Information</h2>
+        <form class="mt-4" method="POST" action="{% url 'Profile' %}">
+            {% csrf_token %}
+             <div class="mb-3">
+          <label for="nickname" class="form-label">Nickname</label>
+          <input type="text" class="form-control" id="nickname" name="nickname" value="{{ user.NickName }}">
+      </div>
+
+      <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" name="email" value="{{ user.Email }}">
+      </div>
+          <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" name="password" value="{{ user.Password }}">
+      </div>
+
+      <div class="mb-3">
+          <label for="phone" class="form-label">Phone</label>
+          <input type="text" class="form-control" id="phone" name="phone" value="{{ user.Phone }}">
+      </div>
+
+      <div class="mb-3">
+          <label for="money" class="form-label">Money</label>
+          <input type="text" class="form-control" id="money" name="money" value="{{ user.Money }}">
+      </div>
+
+      <div class="d-flex justify-content-end mt-4">
+          <button type="submit" class="btn btn-primary">Upload</button>
+          <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+      </div>
+        </form>
+            </div>
+         {% endblock %}
+
+              
+    

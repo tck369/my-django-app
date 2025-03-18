@@ -1,0 +1,17 @@
+.menu-item {
+    display: block;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    text-align: center;
+    margin: 10px 0;
+    transition: background 0.3s;
+}
+
+.menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+.navbar img {
+    background-color: transparent; /* 确保背景透明 */
+    mix-blend-mode: multiply; /* 让白色背景部分变透明（适用于非透明 PNG） */
+}

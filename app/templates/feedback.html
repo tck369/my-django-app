@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <link href="{% static 'css/feedback.css' %}" rel="stylesheet">
+    <div class="container-fluid p-4">
+        <h2>Feedback</h2>
+        <form method="POST" action="{% url 'feedback_upload' %}">
+            {% csrf_token %}
+            <div>
+                <textarea class="form-control" name="feedback" rows="10" placeholder="Enter your feedback here..."></textarea>
+            </div>
+            <div class="d-flex justify-content-end mt-3">
+                <button class="btn btn-primary me-2" type="submit">Submit</button>
+                <button class="btn btn-secondary" onclick="window.history.back()">Back</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

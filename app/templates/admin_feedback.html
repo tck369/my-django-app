@@ -1,0 +1,31 @@
+{% extends "admin_base.html" %}
+{% load static %}
+{% block content %}
+    <link href="{% static 'css/booking.css' %}" rel="stylesheet">
+    <div class="container-fluid mt-4">
+        
+        <!-- Feedbacks Table -->
+        <div class="table-container mt-5">
+            <h3>Feedbacks</h3>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Text</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for feedback in feedbacks %}
+                    <tr>
+                        <td>{{ feedback.text }}</td>
+                        <td>{{ feedback.time|date:"Y-m-d H:i" }}</td>
+                        <td>{{ feedback.name }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+{% endblock %}
